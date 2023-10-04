@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Add SweetAlert2 CSS link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  <title>Interactive Quiz</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #e0f7fa; /* Light gray background */
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
+      margin-top: 20px;
+    }
+
+    .question {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      margin-bottom: 20px;
+    }
+
+    .option {
+      display: block;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #f8f9fa;
+    }
+
+    #submit-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #submit-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Animasi fade */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div id="quiz-container" class="container">
+    <div class="question">Bagaimana cara kamu mengecek denyut nadi seseorang?</div>
+    <div class="options">
+      <label class="option">
+        <input type="radio" name="q1" value="a"> Meraba leher atau pergelangan tangan mereka
+      </label>
+      <label class="option">
+        <input type="radio" name="q1" value="b"> Memeriksa tekanan darah mereka
+      </label>
+      <label class="option">
+        <input type="radio" name="q1" value="c"> Menghitung jumlah gigi mereka
+      </label>
+    </div>
+    <a href="soal2.html" class="btn btn-warning" onclick="prevStep()">Kembali</a>
+    <button id="submit-button" onclick="submitQuiz()" class="float-right">Kirim</button>
+  </div>
+
+  <!-- Add SweetAlert2 JS script -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    function submitQuiz() {
+      const selectedOption = document.querySelector('input[name="q1"]:checked');
+
+      if (selectedOption) {
+        const answer = selectedOption.value;
+
+        if (answer === 'a') {
+          showSweetAlert('Correct!', 'success', 'index.html');
+        } else {
+          showSweetAlert('Incorrect. Try again!', 'error', '');
+        }
+      } else {
+        showSweetAlert('Please select an answer.', 'warning', '');
+      }
+    }
+
+    function showSweetAlert(message, icon, nextURL) {
+      Swal.fire({
+        text: message,
+        icon: icon,
+        timer: 3000,
+        showConfirmButton: false,
+      }).then(() => {
+        // Redirect to the next URL if provided
+        if (nextURL) {
+          window.location.href = nextURL;
+        }
+      });
+    }
+  </script>
+</body>
+</body>
+
+</html>

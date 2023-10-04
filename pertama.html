@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Pertolongan Pertama</title>
+  <!-- Add Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Kontainer untuk video -->
+  <div id="video-container" class="container mt-5">
+    <video id="game-video" width="100%" height="auto" controls>
+      <source src="assets/img/FIXVIDEO.mp4" type="video/mp4">
+      <track kind="subtitles" src="subtitle/subtitle.vtt.txt" srclang="en" label="English" default>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Kontainer untuk teks cerita dan tombol -->
+  <div id="story-container" class="container mt-4">
+    <div id="story-text" class="jumbotron bg-success text-white">
+      <div id="text-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2 class="display-4">Langkah Pertama</h2>
+            <p class="lead">Pastikan Lingkungan Aman</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Kedua</h2>
+            <p class="lead">Pastikan Kesedaran Korban</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Ketiga</h2>
+            <p class="lead">Serukan Bantuan Jika Korban Tidak Sadar</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Keempat</h2>
+            <p class="lead">Hubungi Call Center</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Kelima</h2>
+            <p class="lead">Angkat Kepala Miringkan Dagu</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Keenam</h2>
+            <p class="lead">Lihat Gerakan Dada</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Ketujuh</h2>
+            <p class="lead">Rasakan Hembusan Nafas</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Kedelapan</h2>
+            <p class="lead">Lihat pernafasan apakah dia normal atau tidak normal</p>
+          </div>
+          <div class="carousel-item">
+            <h2 class="display-4">Langkah Kesembilan</h2>
+            <p class="lead">Lakukan Langkah Lebih Lanjut</p>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#text-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#text-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-between">
+      <a href="index.html" class="btn btn-warning" onclick="prevStep()">Kembali</a>
+      <a href="soal1.html" class="btn btn-primary" onclick="nextStep()">Latihan</a>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS and Popper.js scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/game.js"></script>
+</body>
+
+</html>
